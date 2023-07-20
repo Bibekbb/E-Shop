@@ -1,0 +1,46 @@
+<!-- input_form.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Outfit Recommendation</title>
+</head>
+<body>
+    <h1>Outfit Recommendation System</h1>
+
+    <form method="post" action="{% url 'outfit_recommendation' %}">
+        {% csrf_token %}
+        <label for="color">Color:</label>
+        <select name="color" id="color">
+            <option value="red">Red</option>
+            <option value="blue">Blue</option>
+            <option value="black">Black</option>
+        </select>
+        <br><br>
+
+        <label for="style">Style:</label>
+        <select name="style" id="style">
+            <option value="casual">Casual</option>
+            <option value="formal">Formal</option>
+        </select>
+        <br><br>
+
+        <label for="occasion">Occasion:</label>
+        <select name="occasion" id="occasion">
+            <option value="formal">Formal</option>
+            <option value="casual">Casual</option>
+        </select>
+        <br><br>
+
+        <label for="season">Season:</label>
+        <select name="season" id="season">
+            <option value="summer">Summer</option>
+            <option value="winter">Winter</option>
+            <option value="spring">Spring</option>
+        </select>
+        <br><br>
+
+        <input type="submit" value="Get Recommendations">
+    </form>
+</body>
+</html>

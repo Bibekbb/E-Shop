@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block body%}
+<section id="form" style="margin-left:30%;">
+    <div class="container">
+        <div class="col-sm-4">
+            <div class="signup-form"><!--sign up form-->
+                <h2>Login To Your Account!</h2>
+                <form action="#" method="POST" novalidate>
+                    {% csrf_token %}
+                    {% for field in form  %}
+                    {{ field.errors }}
+                    <label for=" {{field.label_tag}} "></label>
+                    <p>{{ field }}</p>
+                    {% endfor %}
+                    <a href="{% url 'password_reset' %}" style="float:right;">Forgot Password ?</a><br>
+                    <button type="submit" class="btn btn-default">Login</button>
+                    <a href="{% url 'signup' %}"><span style="color:black; margin-left:120px;">Create Your Account&nbsp;&rarr;</span></a>
+                </form>
+            </div><!--/sign up form-->
+        </div>
+    </div>
+</section>
+
+{% endblock body %}
